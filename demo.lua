@@ -23,11 +23,11 @@ print("Seed: " .. opt.manualSeed)
 torch.manualSeed(opt.manualSeed)
 
 -- load Context-Encoder
+assert(opt.net ~= '', 'provide a generator model')
 net = torch.load(opt.net)
 net:apply(function(m) if m.weight then 
     m.gradWeight = m.weight:clone():zero(); 
     m.gradBias = m.bias:clone():zero(); end end)
-assert(net ~= '', 'provide a generator model')
 net:evaluate()
 
 -- initialize variables
@@ -55,7 +55,7 @@ for i=1,opt.batchSize do
 end
 print('Loaded Image Block: ', image_ctx:size(1)..' x '..image_ctx:size(2) ..' x '..image_ctx:size(3)..' x '..image_ctx:size(4))
 
--- Remove center region from input image
+-- remove center region from input image
 real_center = image_ctx[{{},{},{1 + inputSize/4, inputSize/2 + inputSize/4},{1 + inputSize/4, inputSize/2 + inputSize/4}}]:clone()      -- copy by value
 
 -- fill center region with mean value
