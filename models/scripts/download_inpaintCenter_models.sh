@@ -5,7 +5,7 @@ cd $DIR
 
 FILE=inpaintCenterModels.tar.gz
 URL=http://www.cs.berkeley.edu/~pathak/context_encoder/resources/$FILE
-CHECKSUM=350a7e058b1ab81ec9310011f0937c82
+CHECKSUM=632b1cfcc9bc59212c77ca138235d125
 
 if [ ! -f $FILE ]; then
   echo "Downloading the Inpainting Center Fill models (504MB)..."

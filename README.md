@@ -1,5 +1,6 @@
 ## Context Encoders: Feature Learning by Inpainting
-[Project Website](http://cs.berkeley.edu/~pathak/context_encoder/)
+[Project Website](http://cs.berkeley.edu/~pathak/context_encoder/)<br/>
+RECENT: Checkout brand new [Imagenet Results](https://people.eecs.berkeley.edu/~pathak/context_encoder/#extraResults) !!
 
 This is the training code for our CVPR 2016 paper on Context Encoders for learning deep feature representation in an unsupervised manner by image inpainting. This code is adapted from an initial fork of [Soumith's DCGAN](https://github.com/soumith/dcgan.torch) implementation. Scroll down to try out a quick demo or train your own inpainting models!
 
@@ -36,7 +37,7 @@ Inpainting using context encoder trained jointly with reconstruction and adversa
   # This will populate the `./models/` folder with trained models.
 
   net=models/inpaintCenter/paris_inpaintCenter.t7 name=paris_result imDir=images/paris overlapPred=4 manualSeed=222 batchSize=21 gpu=1 th demo.lua
-  net=models/inpaintCenter/imagenet_inpaintCenter.t7 name=imagenet_result imDir=images/imagenet overlapPred=0 manualSeed=222 batchSize=21 gpu=1 th demo.lua
+  net=models/inpaintCenter/imagenet_inpaintCenter.t7 name=imagenet_result imDir=images/imagenet overlapPred=4 manualSeed=222 batchSize=21 gpu=1 th demo.lua
   net=models/inpaintCenter/paris_inpaintCenter.t7 name=ucberkeley_result imDir=images/ucberkeley overlapPred=4 manualSeed=222 batchSize=4 gpu=1 th demo.lua
   # Note: If you are running on cpu, use gpu=0
   # Note: samples given in ./images/* are held-out images
