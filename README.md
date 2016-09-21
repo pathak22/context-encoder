@@ -2,7 +2,7 @@
 [Project Website](http://cs.berkeley.edu/~pathak/context_encoder/)<br/>
 RECENT: Checkout brand new [Imagenet Results](https://people.eecs.berkeley.edu/~pathak/context_encoder/#extraResults) !!
 
-This is the training code for our CVPR 2016 paper on Context Encoders for learning deep feature representation in an unsupervised manner by image inpainting. This code is adapted from an initial fork of [Soumith's DCGAN](https://github.com/soumith/dcgan.torch) implementation. Scroll down to try out a quick demo or train your own inpainting models!
+This is the training code for our CVPR 2016 paper on Context Encoders for learning deep feature representation in an unsupervised manner by image inpainting. Context Encoders are trained jointly with reconstruction and adversarial loss. This repo contains quick demo, training/testing code for center region inpainting and training/testing code for arbitray random region inpainting. This code is adapted from an initial fork of [Soumith's DCGAN](https://github.com/soumith/dcgan.torch) implementation. Scroll down to try out a quick demo or train your own inpainting models!
 
 If you find Context Encoders useful in your research, please cite:
 
@@ -20,8 +20,6 @@ If you find Context Encoders useful in your research, please cite:
 4. [TensorFlow Implementation](#4-tensorflow-implementation)
 
 ### 1) Semantic Inpainting Demo
-
-Inpainting using context encoder trained jointly with reconstruction and adversarial loss. Currently, I have only released the demo for the center region inpainting only and will release the arbitrary region semantic inpainting models soon.
 
 1. Install Torch:  http://torch.ch/docs/getting-started.html#_
 
@@ -72,14 +70,24 @@ If you could successfully run the above demo, run following steps to train your 
 
 2. Train the model
   ```Shell
+  # For training center region inpainting model, run:
   DATA_ROOT=dataset/train display_id=11 name=inpaintCenter overlapPred=4 wtl2=0.999 nBottleneck=4000 niter=500 loadSize=350 fineSize=128 gpu=1 th train.lua
+
+  # For training random region inpainting model, run:
+  DATA_ROOT=dataset/train display_id=11 name=inpaintRandomNoOverlap useOverlapPred=0 wtl2=0.999 nBottleneck=4000 niter=500 loadSize=350 fineSize=128 gpu=1 th train_random.lua
+  # or use fineSize=64 to train to generate 64x64 sized image (results are better):
+  DATA_ROOT=dataset/train display_id=11 name=inpaintRandomNoOverlap useOverlapPred=0 wtl2=0.999 nBottleneck=4000 niter=500 loadSize=350 fineSize=64 gpu=1 th train_random.lua
   ```
 
 3. Test the model
   ```Shell
-  # you can either use demo.lua to display the result or use test.lua using following commands:
+  # For training center region inpainting model, run:
   DATA_ROOT=dataset/val net=checkpoints/inpaintCenter_500_net_G.t7 name=test_patch overlapPred=4 manualSeed=222 batchSize=30 loadSize=350 gpu=1 th test.lua
   DATA_ROOT=dataset/val net=checkpoints/inpaintCenter_500_net_G.t7 name=test_full overlapPred=4 manualSeed=222 batchSize=30 loadSize=129 gpu=1 th test.lua
+
+  # For testing random region inpainting model, run (with fineSize=64 or 124, same as training):
+  DATA_ROOT=dataset/val net=checkpoints/inpaintRandomNoOverlap_500_net_G.t7 name=test_patch_random useOverlapPred=0 manualSeed=222 batchSize=30 loadSize=350 gpu=1 th test_random.lua
+  DATA_ROOT=dataset/val net=checkpoints/inpaintRandomNoOverlap_500_net_G.t7 name=test_full_random useOverlapPred=0 manualSeed=222 batchSize=30 loadSize=129 gpu=1 th test_random.lua
   ```
 
 ### 3) Download Features Caffemodel
@@ -91,4 +99,4 @@ Features for context encoder trained with reconstruction loss.
 
 ### 4) TensorFlow Implementation
 
-Checkout the cool TensorFlow implementation of our paper by Taeksoo [here](https://github.com/jazzsaxmafia/Inpainting).
+Checkout the TensorFlow implementation of our paper by Taeksoo [here](https://github.com/jazzsaxmafia/Inpainting). However, it does not implement full functionalities of our paper.
