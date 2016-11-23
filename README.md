@@ -1,10 +1,13 @@
 ## Context Encoders: Feature Learning by Inpainting
 [Project Website](http://cs.berkeley.edu/~pathak/context_encoder/)<br/>
-RECENT: Checkout brand new [Imagenet Results](https://people.eecs.berkeley.edu/~pathak/context_encoder/#extraResults) !!
+RECENT: Checkout new [Imagenet Results](https://people.eecs.berkeley.edu/~pathak/context_encoder/#extraResults) !!
+Sample results on held-out images: 
 
-This is the training code for our CVPR 2016 paper on Context Encoders for learning deep feature representation in an unsupervised manner by image inpainting. Context Encoders are trained jointly with reconstruction and adversarial loss. This repo contains quick demo, training/testing code for center region inpainting and training/testing code for arbitray random region inpainting. This code is adapted from an initial fork of [Soumith's DCGAN](https://github.com/soumith/dcgan.torch) implementation. Scroll down to try out a quick demo or train your own inpainting models!
+![teaser](images/teaser.jpg "Sample inpainting results on held-out images")
 
-If you find Context Encoders useful in your research, please cite:
+This is the training code for our [CVPR 2016 paper on Context Encoders](http://cs.berkeley.edu/~pathak/context_encoder/) for learning deep feature representation in an unsupervised manner by image inpainting. Context Encoders are trained jointly with reconstruction and adversarial loss. This repo contains quick demo, training/testing code for center region inpainting and training/testing code for arbitray random region inpainting. This code is adapted from an initial fork of [Soumith's DCGAN](https://github.com/soumith/dcgan.torch) implementation. Scroll down to try out a quick demo or train your own inpainting models!
+
+If you find [Context Encoders](http://cs.berkeley.edu/~pathak/context_encoder/) useful in your research, please cite:
 
     @inproceedings{pathakCVPR16context,
         Author = {Pathak, Deepak and Kr\"ahenb\"uhl, Philipp and Donahue, Jeff and Darrell, Trevor and Efros, Alexei},
@@ -18,6 +21,7 @@ If you find Context Encoders useful in your research, please cite:
 2. [Train Context Encoders](#2-train-context-encoders)
 3. [Download Features Caffemodel](#3-download-features-caffemodel)
 4. [TensorFlow Implementation](#4-tensorflow-implementation)
+5. [Project Website](#5-project-website)
 
 ### 1) Semantic Inpainting Demo
 
@@ -40,10 +44,6 @@ If you find Context Encoders useful in your research, please cite:
   # Note: If you are running on cpu, use gpu=0
   # Note: samples given in ./images/* are held-out images
   ```
-  
-Sample results on held-out images: 
-
-![teaser](images/teaser.jpg "Sample inpainting results on held-out images")
 
 ### 2) Train Context Encoders
 
@@ -100,3 +100,7 @@ Features for context encoder trained with reconstruction loss.
 ### 4) TensorFlow Implementation
 
 Checkout the TensorFlow implementation of our paper by Taeksoo [here](https://github.com/jazzsaxmafia/Inpainting). However, it does not implement full functionalities of our paper.
+
+### 5) Project Website
+
+Click [here](http://cs.berkeley.edu/~pathak/context_encoder/).
