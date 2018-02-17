@@ -22,6 +22,7 @@ If you find [Context Encoders](http://cs.berkeley.edu/~pathak/context_encoder/) 
 3. [Download Features Caffemodel](#3-download-features-caffemodel)
 4. [TensorFlow Implementation](#4-tensorflow-implementation)
 5. [Project Website](#5-project-website)
+6. [Download Dataset](#6-paris-street-view-dataset)
 
 ### 1) Semantic Inpainting Demo
 
@@ -104,3 +105,7 @@ Checkout the TensorFlow implementation of our paper by Taeksoo [here](https://gi
 ### 5) Project Website
 
 Click [here](http://cs.berkeley.edu/~pathak/context_encoder/).
+
+### 6) Paris Street-View Dataset
+
+Please email me if you need the dataset and I will share a private link with you. I can't post the public link to this dataset due to the policy restrictions from Google Street View.
