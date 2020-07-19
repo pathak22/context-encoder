@@ -1,13 +1,13 @@
 ## Context Encoders: Feature Learning by Inpainting
-[Project Website](http://cs.berkeley.edu/~pathak/context_encoder/)<br/>
-RECENT: Checkout new [Imagenet Results](https://people.eecs.berkeley.edu/~pathak/context_encoder/#extraResults) !!
+#### CVPR 2016
+#### [[Project Website]](https://www.cs.cmu.edu/~dpathak/context_encoder/) [[Imagenet Results]](https://www.cs.cmu.edu/~dpathak/context_encoder/#extraResults)
 Sample results on held-out images: 
 
 ![teaser](images/teaser.jpg "Sample inpainting results on held-out images")
 
-This is the training code for our [CVPR 2016 paper on Context Encoders](http://cs.berkeley.edu/~pathak/context_encoder/) for learning deep feature representation in an unsupervised manner by image inpainting. Context Encoders are trained jointly with reconstruction and adversarial loss. This repo contains quick demo, training/testing code for center region inpainting and training/testing code for arbitray random region inpainting. This code is adapted from an initial fork of [Soumith's DCGAN](https://github.com/soumith/dcgan.torch) implementation. Scroll down to try out a quick demo or train your own inpainting models!
+This is the training code for our [CVPR 2016 paper on Context Encoders](https://www.cs.cmu.edu/~dpathak/context_encoder/) for learning deep feature representation in an unsupervised manner by image inpainting. Context Encoders are trained jointly with reconstruction and adversarial loss. This repo contains quick demo, training/testing code for center region inpainting and training/testing code for arbitray random region inpainting. This code is adapted from an initial fork of [Soumith's DCGAN](https://github.com/soumith/dcgan.torch) implementation. Scroll down to try out a quick demo or train your own inpainting models!
 
-If you find [Context Encoders](http://cs.berkeley.edu/~pathak/context_encoder/) useful in your research, please cite:
+If you find [Context Encoders](https://www.cs.cmu.edu/~dpathak/context_encoder/) useful in your research, please cite:
 
     @inproceedings{pathakCVPR16context,
         Author = {Pathak, Deepak and Kr\"ahenb\"uhl, Philipp and Donahue, Jeff and Darrell, Trevor and Efros, Alexei},
@@ -95,8 +95,8 @@ If you could successfully run the above demo, run following steps to train your 
 
 Features for context encoder trained with reconstruction loss.
 
-- [Prototxt](http://www.cs.berkeley.edu/~pathak/context_encoder/resources/ce_features.prototxt)
-- [Caffemodel](http://www.cs.berkeley.edu/~pathak/context_encoder/resources/ce_features.caffemodel)
+- [Prototxt](https://www.cs.cmu.edu/~dpathak/context_encoder/resources/ce_features.prototxt)
+- [Caffemodel](https://www.cs.cmu.edu/~dpathak/context_encoder/resources/ce_features.caffemodel)
 
 ### 4) TensorFlow Implementation
 
@@ -104,7 +104,7 @@ Checkout the TensorFlow implementation of our paper by Taeksoo [here](https://gi
 
 ### 5) Project Website
 
-Click [here](http://cs.berkeley.edu/~pathak/context_encoder/).
+Click [here](https://www.cs.cmu.edu/~dpathak/context_encoder/).
 
 ### 6) Paris Street-View Dataset
 
