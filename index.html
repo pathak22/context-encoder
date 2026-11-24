@@ -1,0 +1,320 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<style type="text/css">
+  body {
+    font-family: "Titillium Web","HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight:300;
+    font-size:18px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1100px;
+  }
+
+  h1 {
+    font-weight:300;
+  }
+
+  .disclaimerbox {
+    background-color: #eee;
+    border: 1px solid #eeeeee;
+    border-radius: 10px ;
+    -moz-border-radius: 10px ;
+    -webkit-border-radius: 10px ;
+    padding: 20px;
+  }
+
+  video.header-vid {
+    height: 140px;
+    border: 1px solid black;
+    border-radius: 10px ;
+    -moz-border-radius: 10px ;
+    -webkit-border-radius: 10px ;
+  }
+
+  img.header-img {
+    height: 140px;
+    border: 1px solid black;
+    border-radius: 10px ;
+    -moz-border-radius: 10px ;
+    -webkit-border-radius: 10px ;
+  }
+
+  img.rounded {
+    border: 1px solid #eeeeee;
+    border-radius: 10px ;
+    -moz-border-radius: 10px ;
+    -webkit-border-radius: 10px ;
+  }
+
+  a:link,a:visited
+  {
+    color: #1367a7;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #208799;
+  }
+
+  td.dl-link {
+    height: 160px;
+    text-align: center;
+    font-size: 22px;
+  }
+
+  .layered-paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+    box-shadow:
+            0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+            5px 5px 0 0px #fff, /* The second layer */
+            5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+            10px 10px 0 0px #fff, /* The third layer */
+            10px 10px 1px 1px rgba(0,0,0,0.35), /* The third layer shadow */
+            15px 15px 0 0px #fff, /* The fourth layer */
+            15px 15px 1px 1px rgba(0,0,0,0.35), /* The fourth layer shadow */
+            20px 20px 0 0px #fff, /* The fifth layer */
+            20px 20px 1px 1px rgba(0,0,0,0.35), /* The fifth layer shadow */
+            25px 25px 0 0px #fff, /* The fifth layer */
+            25px 25px 1px 1px rgba(0,0,0,0.35); /* The fifth layer shadow */
+    margin-left: 10px;
+    margin-right: 45px;
+  }
+
+
+  .layered-paper { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+    box-shadow:
+            0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+            5px 5px 0 0px #fff, /* The second layer */
+            5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+            10px 10px 0 0px #fff, /* The third layer */
+            10px 10px 1px 1px rgba(0,0,0,0.35); /* The third layer shadow */
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-right: 30px;
+    margin-bottom: 5px;
+  }
+
+  .vert-cent {
+    position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+  }
+
+  hr
+  {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+  }
+</style>
+<!-- Start : Google Analytics Code -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-64069893-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+<!-- End : Google Analytics Code -->
+<script type="text/javascript" src="js/hidebib.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,600,400italic,600italic,300,300italic' rel='stylesheet' type='text/css'>
+  <head>
+    <link rel="icon" type="image/png" href="images/seal_icon.png">
+    <title>Context Encoders: Feature Learning by Inpainting</title>
+  </head>
+
+  <body>
+        <br>
+        <center><span style="font-size:46px;font-weight:bold;">Context Encoders: Feature Learning by Inpainting</span></center>
+        <br>
+
+        <table align=center width=600px>
+          <tr>
+            <td align=center width=100px>
+            <center><span style="font-size:24px"><a href="https://www.deepakpathak.com/">Deepak Pathak</a></span></center></td>
+            <td align=center width=100px>
+            <center><span style="font-size:24px"><a href="http://www.philkr.net/">Phillip Kr&auml;henb&uuml;hl</a></span></center></td>
+            <td align=center width=100px>
+            <center><span style="font-size:24px"><a href="http://jeffdonahue.com/">Jeff Donahue</a></span></center></td>
+          <tr/>
+         </table>
+         <table align=center width=400px>
+          <tr>
+            <td align=center width=150px>
+            <center><span style="font-size:24px"><a href="http://www.eecs.berkeley.edu/~trevor/">Trevor Darrell</a></span></center></td>
+            <td align=center width=150px>
+            </center><span style="font-size:24px"><a href="http://www.eecs.berkeley.edu/~efros/">Alexei A. Efros</a></span></center></td>
+          <tr/>
+        </table>
+        <table align=center width=400px>
+          <tr>
+            <td align=center width=150px>
+            <center><span style="font-size:24px">UC Berkeley</span></center></td>
+          <tr/>
+        </table>
+         <table align=center width=400px>
+          <tr>
+            <td align=center width=150px>
+            <center><span style="font-size:24px"><a href="http://cvpr2016.thecvf.com">CVPR 2016</a></span></center></td>
+          <tr/>
+        </table><br/>
+        <table align=center width=450px>
+          <tr>
+            <td align=center width=250px>
+            <center><span style="font-size:24px">Checkout brand new <a href="#extraResults">Imagenet Results</a> !!</center></td>
+          <tr/>
+        </table>
+        </center>
+
+        <br>
+
+        <table align=center width=1000px>
+          <tr><td width=1000px>
+            <center><a href="resources/result_fig.jpg"><img class="rounded" src = "resources/result_fig.jpg" height="500px"></img></href></a><br></center>
+          </td></tr>
+          <tr><td width=1000px>
+            <center><span style="font-size:14px"><i>Semantic Inpainting results on held-out images by Context Encoder.</i></center>
+          </td></tr>
+        </table>
+
+        <br><br>
+        <!-- <hr> -->
+
+        <!-- <table align=center width=850px>
+          <center><h1>Abstract</h1></center>
+        </table> -->
+        We present an unsupervised visual feature learning algorithm driven by context-based pixel prediction. By analogy with auto-encoders, we propose Context Encoders -- a convolutional neural network trained to generate the contents of an arbitrary image region conditioned on its surroundings. In order to succeed at this task, context encoders need to both understand the content of the entire image, as well as produce a plausible hypothesis for the missing part(s). When training context encoders, we have experimented with both a standard pixel-wise reconstruction loss, as well as a reconstruction plus an adversarial loss.  The latter produces much sharper results because it can better handle multiple modes in the output. We found that a context encoder learns a representation that captures not just appearance but also the semantics of visual structures. We quantitatively demonstrate the effectiveness of our learned features for CNN pre-training on classification, detection, and segmentation tasks. Furthermore, context encoders can be used for semantic inpainting tasks, either stand-alone or as initialization for non-parametric methods.
+
+      <br><br>
+      <hr>
+
+      <center><h1>Demo and Source Code</h1></center>
+        <table align=center width=800px>
+        <tr>
+          <td width=400px align=center>
+            <span style="font-size:28px">Inpainting Code<br/><a href='https://github.com/pathak22/context-encoder'>[GitHub]</a></span>
+          </td>
+          <td width=400px align=center>
+            <span style="font-size:28px">Features Caffemodel<br/><a href="resources/ce_features.prototxt">[Prototxt]</a>&nbsp;<a href="resources/ce_features.caffemodel">[Model 17MB]</a></span>
+          </td>
+        </tr>
+      </table>
+
+      <br>
+      <hr>
+
+      <center id="extraResults"><h1>Imagenet Results</h1></center>
+      <table align=center width=800px>
+        <tr><td>
+      These are Context Encoder results on random crops of "held-out" images. Center half region is inpainted by our method. Browser images appear on a rolling basis so you can still see results while full file is being loaded.<br/><br/>
+
+      All the models were trained completely from scratch. 1.2M-Imagenet model was trained on complete 1.2M image-set of ILSVRC'12 for 110 epochs on Titan-X GPU and took one month to train. 100K-Imagenet model was trained on a random subset of 100K-images from ILSVRC'12 for 500 epochs spanned over 6 days. This 100K set was chosen at random, and we believe results shouldn't change if this set is chosen truly randomly. However, the list of exact 100K image ids is available for download below. Results are shown on images from ILSVRC'12 validation set.</td></tr></table><br/>
+        <table align=center width=800px>
+        <tr>
+          <td width=400px align=center>
+            <span style="font-size:28px">1.2M-Imagenet Trained (110 epochs)<br/>
+            <a href='1M_imagenet_full.html'>[Browse Image Results]</a> or <a href='resources/test_full_ALL.tar.gz'>[Download Tar 82MB]</a><br/>
+            <a href='1M_imagenet_patch.html'>[Browse Patch Results]</a> or <a href='resources/test_patch_ALL.tar.gz'>[Download Tar 76MB]</a></span>
+          </td>
+          </tr><tr><td><br/><br/></td></tr>
+          <tr>
+          <td width=400px align=center>
+            <span style="font-size:28px">100K-Imagenet Trained (500 epochs)<br/>
+            <a href='resources/100K_Imagenet_imageIds.txt'>[Training 100K Image IDs]</a><br/>
+            <a href='100K_imagenet_full.html'>[Browse Image Results]</a> or <a href='resources/test_full_ALL_100K.tar.gz'>[Download Tar 82MB]</a><br/>
+            <a href='100K_imagenet_patch.html'>[Browse Patch Results]</a> or <a href='resources/test_patch_ALL_100K.tar.gz'>[Download Tar 76MB]</a></span>
+          </td>
+        </tr>
+      </table>
+
+      <br>
+      <hr>
+
+      <center id="extraResults"><h1>Paris Street-View Results</h1></center>
+      <table align=center width=800px><tr>
+          <td width=400px align=center>
+      <span style="font-size:28px">StreetView Inpainting<br/><a href='paris_patch.html'>[Browse Image Results]</a></span>
+      </td>
+        </tr>
+      </table>
+
+      <br>
+      <hr>
+
+      <table align=center width=850px>
+          <center><h1>Paper and Supplementary Material</h1></center>
+          <tr>
+          <td width=350px align=left>
+          <p style="margin-top:4px;"></p>
+          <a href="papers/cvpr16.pdf"><img style="height:150px" src="resources/cvpr16_thumbnail.jpeg"/></a>
+          <span style="font-size:20pt"><a href="papers/cvpr16.pdf">[paper 15MB]</a>&nbsp;
+          <span style="font-size:20pt"><a href="https://arxiv.org/abs/1604.07379">[arXiv]</a>
+          <span style="font-size:20pt"><a href="resources/ContextEncoder_Slides.pptx">[slides]</a>
+          </td>
+          <td width=100px align=center>
+          </td>
+          <td width=450px align=left>
+          <p style="margin-top:4px;"></p>
+          <p style="text-align:left;"><b>Citation</b><br/><span style="font-size:4px;">&nbsp;<br/></span> Deepak Pathak, Philipp Krahenbuhl, Jeff Donahue, Trevor Darrell and Alexei A. Efros. <b>Context Encoders: Feature Learning by Inpainting.</b> In <i>CVPR 2016</i>.</p>
+          <p style="margin-top:20px;"></p>
+          <span style="font-size:20pt"><a shape="rect" href="javascript:togglebib('cvpr16_bib')" class="togglebib">[Bibtex]</a></span>
+          </td>
+          </tr>
+          <tr>
+          <td width=350px align=left>
+          </td>
+          <td width=100px align=center>
+          </td>
+          <td width=450px align=left>
+            <div class="paper" id="cvpr16_bib">
+<pre xml:space="preserve">@inproceedings{pathakCVPR16context,
+    Author = {Pathak, Deepak and
+    Kr\"ahenb\"uhl, Philipp and
+    Donahue, Jeff and
+    Darrell, Trevor and
+    Efros, Alexei},
+    Title = {Context Encoders:
+    Feature Learning by Inpainting},
+    Booktitle = CVPR,
+    Year = {2016}
+}</pre>
+            </div>
+            </td>
+            </tr>
+        </table>
+
+      <br>
+      <hr>
+      <br>
+        <table align=center width=1000px>
+          <tr><td width=1000px>
+            <center><a href="resources/teaser.jpg"><img class="rounded" src = "resources/teaser.jpg" height="500px"></img></href></a><br></center>
+          </td></tr>
+          <tr><td width=1000px>
+            <center><span style="font-size:14px"><i>Qualitative illustration of the task w/ an example of inpainting by human artist.</i></center>
+          </td></tr>
+        </table>
+
+      <br>
+      <hr>
+      <br>
+
+        <table align=center width=800px>
+          <tr><td width=800px><left>
+          <center><h1>Acknowledgements</h1></center>
+          The authors would like to thank Amanda Buster for the artwork in figure above, as well as Shubham Tulsiani and Saurabh Gupta for helpful discussions. This work was supported in part by DARPA, AFRL, Intel, DoD MURI award N000141110688, NSF awards  IIS-1212798, IIS-1427425, and IIS-1536003, the Berkeley Vision and Learning Center and Berkeley Deep Drive. We also thank NVIDIA for gpu donation.
+          </left></td></tr>
+        </table>
+
+<table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+    <tr><td><br><p align="right"><font size="2">
+    Template: <a href="http://richzhang.github.io/colorization/">Colorful people!</a>
+    </font></p></td></tr>
+</table>
+
+    <br><br>
+<script xml:space="preserve" language="JavaScript">
+hideallbibs();
+</script>
+</body>
+</html>
